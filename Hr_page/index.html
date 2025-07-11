@@ -739,7 +739,7 @@
                 };
 
                 try {
-                    const response = await fetch('http://localhost:3000/api/bonus', {
+                    const response = await fetch('http://13.233.136.229:3529/api/bonus', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify(formData)
@@ -751,7 +751,7 @@
                     }
 
                     successMessage.style.display = 'flex';
-                    setTimeout(() => successMessage.style.display = 'none', 3000);
+                    setTimeout(() => successMessage.style.display = 'none', 3529);
 
                     bonusForm.reset();
                     document.querySelectorAll('.form-control').forEach(input => input.classList.remove('is-invalid'));
@@ -783,7 +783,7 @@
                     if (month) params.append('month', month);
                     if (year) params.append('year', year);
 
-                    const url = `http://localhost:3000/api/bonus/history?${params.toString()}`;
+                    const url = `http://13.233.136.229:3529/api/bonus/history?${params.toString()}`;
                     const response = await fetch(url);
 
                     if (!response.ok) {
